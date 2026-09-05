@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 body{
-    background-color: rgb(234, 228, 228);
+    background-color: #ffffff;
 }
 
 h1,h2,h3{
@@ -17,7 +17,7 @@ h2{
     font-size: 30px;
 }
 h3{
-    color: rgb(226, 226, 226);
+    color: #ffffff;
 
 }
 li{
@@ -26,7 +26,7 @@ li{
 
 }
 ul li{
-    background-color: rgb(245, 248, 247);
+    background-color: #ffffff;
 }
 ol li{
     list-style: decimal;

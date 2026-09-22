@@ -1,19 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
 
 body{
     background-color: #ffffff;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 h1,h2,h3{
-    font-family: Arial, sans-serif;
-    font-weight: 200;
+    font-family: "Coiny", system-ui;
+    
 }
 h1{
     background-color: #ffffff;
-    text-align: center; 
+    text-align: center;
+    font-size: 80px; 
+    margin-top: 0;
+    margin-bottom: 0;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
 }
 h2{
-    text-decoration: underline;
     font-size: 30px;
 }
 h3{
@@ -21,7 +27,7 @@ h3{
 
 }
 li{
-    font-family: sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     font-size: 20px;
 
 }
@@ -30,4 +36,150 @@ ul li{
 }
 ol li{
     list-style: decimal;
+}
+
+p{
+    font-size: 18px;
+    color: #333333;
+}
+
+strong{
+    color: #d67d1a;
+}
+
+em {
+    color: #d67d1a;
+}
+img{
+    width: 200px;
+    /* height: 330x; */
+    padding: 20px; /* means were addign padding between the image and the thing that its next to, adding 20px all around */
+    border-width: 2px;
+    border-color: orange;
+    border-style: solid;
+    /* can write the above 3 lines like this: border: 10px white; */
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px; /* creates a 10 pixel spacing between the link and the image */
+}
+
+header{ /* stick to between 900-1000 pixels for the header */
+    width: 960px;
+    border: 1px black;
+    padding: 10px;
+    margin-top: -7px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto; /* as you resize browser, the container will always be centred */
+}
+
+main{
+    width: 960px;
+    border: 1px black;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin: 0 auto; /* this means top and bottom 0 and left and right auto */
+}
+
+footer{
+    width: 960px;
+    border: 1px black;
+    padding: 10px;
+    margin: 0 auto; /* this means top and bottom 0 and left and right auto */
+
+}
+
+nav{
+    background-color: white;
+
+}
+
+nav ul{
+    height: 100px;
+    margin-left: -40px; /* adjustment for ul tab */
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    grid-template-rows: 50px;
+    gap: 20px;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+nav ul li{
+    list-style: none;
+
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 400;
+    color: orange; 
+
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+
+}
+nav ul li:hover{
+    background-color: oldlace;
+}
+
+.grouping{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+
+}
+.offset{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.imagegallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.imagegallery > img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid orange;
+    padding: 0px;
+    margin: 0px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+.bgimage{
+    background-image: url("../images/image2.jpg");
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: 500px;
+    grid-template-rows: 200px;
+    align-content: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.fig{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    justify-items: center;
 }

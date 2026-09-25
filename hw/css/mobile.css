@@ -1,0 +1,50 @@
+@import url(style.css);
+
+header, main, footer{
+    width: 100%;
+}
+
+nav ul{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    height: auto;
+}
+
+nav ul li{
+        width: 100%;
+
+}
+
+.grouping{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+.offset{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+.imagegallery{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+}
+
+.fig{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.bgimage{
+    grid-template-columns: 1fr;
+    font-size: 24px;
+    text-align: center;
+}

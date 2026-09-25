@@ -183,3 +183,8 @@ nav ul li:hover{
     gap: 20px;
     justify-items: center;
 }
+
+.imagegallery h3,
+.fig h3{
+    grid-column: 1 / -1;
+}

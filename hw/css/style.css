@@ -188,3 +188,8 @@ nav ul li:hover{
 .fig h3{
     grid-column: 1 / -1;
 }
+
+.highlight{
+    border: 2px solid orange;
+    padding: 10px;
+}

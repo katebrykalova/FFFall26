@@ -1,0 +1,156 @@
+STEP 1 – SKELETON
+- HTML = HyperText Markup Language
+- <!DOCTYPE html> = first line, says it's HTML5
+- <head> = info about the page (not visible); <body> = what users see
+- <title> = text in the browser tab (goes in <head>)
+- Most tags open and close (<p></p>); <img> has NO closing tag
+- lang="en" on <html> = page language (validator warns if missing)
+
+STEP 2 – META TAGS
+- Attribute = extra info inside the opening tag (href, src, alt, class, id, name, content)
+- Meta tags go in <head>, no closing tag
+- description / author / keywords = for search engines
+- charset="UTF-8" = for the BROWSER, tells it how to read characters
+
+STEP 3 – SEMANTIC STRUCTURE
+- Semantic = tag name describes its content
+- <header> = top, <main> = main content, <footer> = bottom
+- <body> holds ALL of them; <main> is just the main content
+- <section> = group of related content (like a chapter)
+- <ol> = numbered, <ul> = bullets, <li> = each item
+- Only ONE <h1> per page
+- <div> = generic box, NOT semantic (the name means nothing)
+
+STEP 4 – INLINE TAGS, LINKS, IMAGES
+- <strong> = bold + important (semantic); <b> = just bold
+- <em> = italic + emphasized (semantic); <i> = just italic
+- href = where a link goes; src = where an image is
+- alt = image description, read by screen readers; missing alt = validator ERROR
+- target="_blank" = opens link in a new tab
+- Starts with http/https = absolute; otherwise = relative
+
+STEP 5 – NAV + LINKS
+- Nav structure: nav > ul > li > a
+- href="#section1" jumps to id="section1" on the same page
+- # goes in the href ONLY, not in the id
+- The name after # must match the id; the visible link text doesn't matter
+- href="page2.html" = link to another page (relative)
+
+STEP 6 – ADDING CSS
+- CSS = Cascading Style Sheets
+- 3 places: external file via <link> (BEST) > <style> in <head> (OK) > style="" attribute (WORST)
+- Why external is best: MODULARITY (change once, every page updates)
+- <link rel="stylesheet" href="css/style.css"> — rel = relationship, href = path to the file
+- <link> = a pointer to a file; <style> = CSS written in the page
+- CSS reads top to bottom: the LATER rule wins (when equally specific)
+- CSS not working? Save, refresh, check the href path
+
+STEP 7 – CSS BASICS
+- @import (Google Fonts) goes at the TOP of the CSS file; copy ONLY the @import line, never the <style> tags
+- rgba(255,0,0,1.0) = solid red; alpha 1.0 = solid, 0 = invisible
+- #ffffff = white, #000000 = black (hex)
+- color = text color; background-color = color behind the element
+- text-align: center centers TEXT only
+- h1 is a block element, so its background stretches the full width
+- h1, h2, h3 { } = commas apply one rule to multiple selectors
+- font-family: "Roboto", fantasy; = 2nd font is the fallback
+- font-weight 100–900; 400 = normal
+- ul li = every li INSIDE a ul (the space = "inside of")
+- Specificity first (ul li beats li), then order breaks ties
+- Child keeps inherited styles it doesn't override
+
+STEP 8 – BOX MODEL (extra review needed)
+- Inside → out: content, padding, border, margin
+- Padding = inside the border; margin = outside the border
+- Total width = width + padding×2 + border×2 (margin NOT counted)
+- img: set width OR height, never both (both = stretched/distorted)
+- border: 10px white solid = shorthand for width + color + style
+- Padding/margin shorthand: 1 value = all sides; 2 = top/bottom, left/right; 4 = clockwise from top (top, right, bottom, left)
+- Negative margins are allowed (margin-top: -7px pulls up)
+- margin: 0 auto = top/bottom 0, left/right auto → CENTERS a box
+- Empty element with no height = collapses (footer was a thin line)
+- display: inline-block = block items sit side by side ("Model T" layout)
+- .class in CSS, class="name" in HTML (same for #id / id="name")
+
+STEP 9 – GRID NAV
+- display: grid goes on the DIRECT PARENT of the items (ul, not nav)
+- grid-template-columns: 100px 100px 100px 100px = 4 columns (one value per column)
+- grid-template-rows: 50px = 1 row; rows × columns = number of cells
+- gap = space between cells (no margins needed)
+- justify = horizontal ↔, align = vertical ↕
+- -content = moves the WHOLE grid; -items = moves each item inside its cell
+- justify-content: space-between = first/last pushed to the edges, equal space between
+- ul is indented by default → margin-left: -40px removes it (inheritance)
+- list-style: none = removes bullets
+- text-decoration: none = removes the link underline
+- :hover = style applies only while the mouse is over the element
+- nav ul li = space = anywhere inside; nav > ul = direct child only
+
+STEP 10 – GRID RECIPES
+- ../ = step OUT of the current folder (css/style.css → ../images/)
+- Background image needs a height, or the box has no space to show it
+- background-repeat: no-repeat (bg images tile by default)
+- background-size: cover = fills the box (may crop); contain = whole image fits inside
+- background-position: center = center crop
+- Background images can't be right-click saved (protects photos)
+- 1fr 1fr 1fr 1fr = 4 equal columns; fr = fraction
+- 1fr 2fr = add up (3 parts): first gets 1/3, second gets 2/3; fills in HTML order
+- grid-template-rows: auto = height fits the content
+- .imagegallery>img = > means direct children only
+- width: 100% = 100% of its container (its grid cell)
+- Reset padding/border/margin to 0 so the images fit their cells (general img rule added extras)
+- <figure> + <figcaption> = image + caption as one unit
+- justify-items: center = centers each item in its cell (horizontal)
+- <div> groups several elements into ONE grid child
+
+STEP 11 – POSITIONING
+- static = DEFAULT (normal order; top/left do nothing)
+- relative = shifts from its normal spot; original space stays reserved
+- absolute = REMOVED from the flow; placed relative to its nearest positioned parent
+- absolute warning: big left values can go off-screen on small screens → use right
+- sticky = scrolls normally, then STICKS at the offset (needs top: 0) → popular for navs
+- z-index = layers; HIGHER number = in FRONT (sticky nav often z-index: 99)
+
+STEP 11 – MEDIA QUERIES / RESPONSIVE
+- Responsive = layout changes based on screen size (desktop, tablet, mobile)
+- min-width: 800px = 800 AND WIDER ("if the screen is at least 800")
+- max-width: 459px = 459 AND NARROWER
+- Two conditions: (min-width: 460px) and (max-width: 799px), each in its own parentheses
+- Breakpoint = the width where the layout switches
+- media="..." on a <link> = only load that CSS file when the condition is true
+- Breakpoints don't overlap (799/800, 459/460) → only one file loads at a time
+- Viewport meta tag missing = page looks ZOOMED OUT on phones
+- @import url(style.css); in mobile/tablet css = pulls in the base styles; rules after it OVERRIDE
+- Why @import instead of copy-paste: change once (modularity)
+- Mobile pattern: side by side → STACKED (columns become rows)
+- height: auto overrides a fixed height cascading from style.css
+- Tablet changes are minor; mobile has the big changes
+
+STEP 12 – JSEXAMPLES HTML/CSS
+- ID = JS targets ONE thing; class = JS targets a GROUP
+- One <script src="..." defer> per JS file; commenting a script out = turning it off
+- .clickBox isn't in the HTML; JS adds it with classList.add
+- View Page Source = original HTML; DevTools Elements = page after JS changes
+- transition: background-color 0.3s ease = smooth fade over 0.3s
+- .images { display: none } hides all; JS shows one with style.display = "block"
+- getElementById names are case-sensitive (tabContent ≠ tabcontent)
+- BUG: <h2>Image Gallery<h2> → missing / on closing tag
+- BUG: <option value="tiger">gorilla</option> → label/value mismatch (quiz 1 Q6)
+- type="button" = plain button; type="submit" tries to send the form
+
+JS review
+- defer = wait for the page to load → missing defer = "null" error
+- getElementById("x") — no # · querySelector("#x") — with #
+- querySelectorAll = ALL matches → an array, index starts at 0
+- length = how many · last index = length − 1
+- A list has no .style → use forEach (or [0])
+- .style.backgroundColor → dashes become camelCase (only after .style)
+- innerHTML = tags become real HTML · innerText = plain text
+- click / mouseover / mouseout · "change" = dropdown selection changed
+- Gallery: hide → +1 → if == length, back to 0 → show
+- Previous: −1 → if == -1, go to length − 1
+- addEventListener("click", nextImage) → NO () = runs on click
+- setInterval(fn, 3000) = REPEATS every 3s · clearInterval stops it
+- 3000 = speed · autoCycle = "is it already on?" (stops stacking)
+- select.value = the value attribute, NOT the visible text
+- type="button" = plain button · type="submit" tries to send the form

@@ -1,0 +1,26 @@
+@import url(style.css);
+
+header, main, footer{
+    width: 100%;
+}
+
+nav ul{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+}
+
+nav ul li{
+    width: 100%;
+}
+
+.offset{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+.fig{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+}
+
+

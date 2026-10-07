@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PathFinder - CS Career Matcher</title>
+        <meta name="description" content="PathFinder helps computer science students explore career paths and find the one that fits them.">
+        <meta name="author" content="Kate Brykalova">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/style.css" media="(min-width: 800px)">
+        <link rel="stylesheet" href="css/mobile.css" media="(max-width: 799px)">
+        <script src="js/clicking.js" defer></script>
+        <script src="js/form.js" defer></script>
+        <script src="js/tabs.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>PathFinder</h1>
+            <nav>
+                <ul>
+                    <li class="navhover"><a href="#careers">Careers</a></li>
+                    <li class="navhover"><a href="#explore">Explore</a></li>
+                    <li class="navhover"><a href="#match">Find Yours</a></li>
+                    <li class="navhover"><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="careers">
+                <h2>Careers</h2>
+                <section class="fig">
+                    <figure>
+                        <img src="images/software.jpg" alt="Code on a computer monitor">
+                        <figcaption>Software Engineer</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/ml.jpg" alt="Data charts on a screen">
+                        <figcaption>ML Engineer</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/data.jpg" alt="Analytics dashboard on a laptop">
+                        <figcaption>Data Scientist</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/security.jpg" alt="Server rack with network cables">
+                        <figcaption>Cybersecurity</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/frontend.jpg" alt="Website layout on a laptop">
+                        <figcaption>Front-End Developer</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/cloud.jpg" alt="Data center hallway">
+                        <figcaption>Cloud / DevOps</figcaption>
+                </figure>
+                </section>
+            </section>
+
+            <section id="explore">
+                <h2>Explore a Career</h2>
+                <div class="buttongrid">
+                    <button class="career">Software Engineer</button>
+                    <button class="career">ML Engineer</button>
+                    <button class="career">Data Scientist</button>
+                    <button class="career">Cybersecurity</button>
+                    <button class="career">Front-End Developer</button>
+                    <button class="career">Cloud / DevOps</button>
+                </div>
+                <div id="tabcontent"></div>
+            </section>
+
+            <section id="match">
+                <h2>Find Your Match</h2>
+                <form>
+                    <label for="interest">What do you enjoy most?</label>
+                    <select name="interest" id="interest">
+                        <option value="building">Building apps</option>
+                        <option value="learning">Teaching computers to learn</option>
+                        <option value="data">Working with data</option>
+                        <option value="security">Solving security puzzles</option>
+                        <option value="design">Designing what users see</option>
+                    </select>
+                    <button type="button" id="submit">Submit</button>
+                </form>
+                <div id="result"></div>
+            </section>
+
+            <section id="about" class="offset">
+                <h2>About PathFinder</h2>
+                <div class="highlight">
+                    <p><strong>The problem:</strong> Most computer science students know they want to work in tech, but there are so many career paths that it's hard to know which one actually fits. Job titles sound alike, and it's not obvious what each role does day to day.</p>
+                    <p><strong>The solution:</strong> PathFinder breaks down the most common CS careers in plain language, then matches you to a path based on what you enjoy most, so you can focus your classes, projects, and internships with confidence.</p>
+                </div>
+            </section>
+        
+        </main>
+
+        <footer>
+
+        </footer>
+    </body>
+</html>

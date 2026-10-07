@@ -1,0 +1,197 @@
+
+<!-- NOTE: First line of every HTML page. Tells the browser "this is HTML5". No closing tag. -->
+<!DOCTYPE html>
+
+<!-- NOTE: Wraps the whole page. Root of the family tree. (Missing lang="en" — validator warns about this.) -->
+<html>
+
+    <!-- NOTE: HEAD = info ABOUT the page. Users don't see any of this on the page. -->
+    <head>
+
+        <!-- NOTE: Text shown in the browser TAB. -->
+        <title>my first website</title>
+        <!-- this is a comment, these are useful for notes ctrl or cmd + /-->
+         <!-- these meta tags are used by the search engine -->
+
+        <!-- NOTE: Meta tags = info for search engines. name = what kind of info, content = the info. No closing tag. -->
+        <!-- NOTE: name and content are ATTRIBUTES (extra info inside the opening tag). -->
+        <meta name="description" content="This is my first website">
+        <meta name="author" content="Zevensuy Rodriguez">
+        <meta name="keywords" content="html, css, learning">
+        <!--  this meta tag encodes my characters and is used by the browser-->
+
+        <!-- NOTE: The only meta tag here for the BROWSER: tells it how to read letters/symbols. -->
+        <meta charset="UTF-8">
+
+        <!-- NOTE: CSS method #2 — a <style> tag inside the head. Only works for THIS page (not modular). -->
+        <!-- NOTE: Sets the background to gainsboro, but style.css loads AFTER this and overrides it to red. Later rule wins. -->
+        <style>
+            body{
+                background-color: gainsboro;
+            }
+        </style>
+
+        <!-- NOTE: CSS method #1 (BEST) — <link> points to an external CSS file. Modular: change once, every page updates. -->
+        <!-- NOTE: rel="stylesheet" = relationship (it's a stylesheet). href = path to the file (relative: into css folder). -->
+        <!-- NOTE: media="(min-width: 800px)" = only load this file on screens 800px AND WIDER (desktop). Added in the media queries lecture. -->
+        <link rel="stylesheet" href="css/style.css" media="(min-width: 800px)">
+
+        <!-- NOTE: Tablet styles: only load between 460px and 799px wide. Two conditions joined with "and". -->
+        <link rel="stylesheet" href="css/tablet.css" media="(min-width: 460px) and (max-width: 799px)">
+
+        <!-- NOTE: Mobile styles: only load on screens 459px AND NARROWER. -->
+        <link rel="stylesheet" href="css/mobile.css" media="(max-width: 459px)">
+
+        <!-- NOTE: VIEWPORT tag — extremely important for phones. Without it, the site looks zoomed out on mobile. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <!-- NOTE: BODY = everything the user SEES. -->
+    <body>
+
+        <!-- NOTE: Semantic tag: the TOP of the page (site title + navigation). -->
+        <header>
+
+            <!-- NOTE: Most important heading. Only ONE h1 per page. -->
+            <h1>Video Games</h1>
+
+            <!-- NOTE: Semantic tag: the navigation menu. -->
+            <nav>
+
+                <!-- NOTE: Nav structure = nav > ul > li > a. CSS grid goes on this ul (the direct parent of the li's). -->
+                <ul>
+
+                    <!-- NOTE: # = jump to the element with id="section1" on THIS page. -->
+                    <li><a href="#section1">Section 1</a></li>
+                    <li><a href="#section2">Section 2</a></li>
+
+                    <!-- NOTE: Link text says "Section 3" but jumps to id="gallery". Only the name after # has to match the id. -->
+                    <li><a href="#gallery">Section 3</a></li>
+
+                    <!-- NOTE: No # = goes to a DIFFERENT page (relative link, same folder). -->
+                    <li><a href="page2.html">Page 2</a></li>
+                </ul> 
+            </nav>
+        </header>
+
+        <!-- NOTE: Semantic tag: the MAIN content of the page. -->
+        <main>
+
+            <!-- NOTE: A section = group of related content. id="section1" is where the "Section 1" link jumps to. -->
+            <section id="section1">
+                <h2>origins</h2>
+
+                <!-- NOTE: p = paragraph. "Lorem ipsum" = fake placeholder text. -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio facilis tempore porro aliquam! Fugiat, explicabo. Unde eos dolor rem illum. Ullam expedita quidem perspiciatis delectus voluptas ducimus culpa laudantium assumenda!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio facilis tempore porro aliquam! Fugiat, explicabo. Unde eos dolor rem illum. Ullam expedita quidem perspiciatis delectus voluptas ducimus culpa laudantium assumenda!</p>
+            </section>
+            <section id="section2">
+                <h3>Favorite Game Genre</h3>
+
+                <!-- NOTE: ol = ORDERED list (numbered). In CSS, "ol li" changes the numbers to Greek letters. -->
+                <ol>
+
+                    <!-- NOTE: li = list item (works in both ol and ul). -->
+                    <li>action</li>
+                    <li>platformers</li>
+                    <li>rpg</li>
+                    <li>text adventures</li>
+                </ol>
+            </section>
+            <section>
+                <h4>Favorite Games</h4>
+
+                <!-- NOTE: ul = UNORDERED list (bullet points). -->
+                <ul>
+
+                    <!-- NOTE: His first CLASS. class="inline" (no dot in HTML). In CSS, .inline = display: inline-block → items sit side by side. -->
+                    <li class="inline">Elden Ring</li>
+                    <li class="inline">Last of Us</li>
+                    <li class="inline">Pokemon</li>
+                </ul>
+            </section>
+
+            <!-- NOTE: This section demos INLINE elements — they sit inside a line of text, no new line. -->
+            <section id="gallery">
+                <h5>Inline tags</h5>
+
+                <!-- NOTE: strong = bold + IMPORTANT (semantic). -->
+                <p>This content is <strong>strong</strong>.</p>
+
+                <!-- NOTE: b = just bold, no meaning. -->
+                <p>This content is <b>bold</b>.</p>
+
+                <!-- NOTE: em = italic + EMPHASIZED (semantic). -->
+                <p>This content is <em>emphasized.</em></p>
+
+                <!-- NOTE: i = just italic. -->
+                <p>This content is <i>italicized.</i></p>
+
+                <!-- NOTE: a = link. href = where it goes. target="_blank" = opens in a NEW TAB. Absolute link (starts with http). -->
+                <p>This <a href="http://www.google.com" target="_blank">link goes to google.com</a></p>
+                <p>This <a href="https://images.pexels.com/photos/7773745/pexels-photo-7773745.jpeg" target="_blank">link goes to an image of .....</a></p>
+
+                <!-- NOTE: img = image, NO closing tag. src = where the image is. ABSOLUTE link (starts with https, file on Pexels' server). -->
+                <!-- NOTE: alt = image description for screen readers / if it fails to load. Missing alt = validator ERROR. -->
+                <p>This is an image of a controller using and absolute link <img src="https://images.pexels.com/photos/7773745/pexels-photo-7773745.jpeg" alt="game controller"></p>
+
+                <!-- NOTE: Same image, RELATIVE link (no http — goes into the images folder on his own site). -->
+                <p>This is an image of a controller using a relative link<img src="images/gamecontroller.jpg" alt="game controller"></p>
+            </section>
+
+            <section>
+                <h3>Image Gallery</h3>
+
+                <!-- NOTE: Grid recipe 1. CSS gives this a background image + centers the h3 over it with a 1x1 grid. -->
+                <section class="bgimage">
+                    <h3>My awesome photo!!</h3>
+                </section>
+
+                <!-- NOTE: Grid recipe 2. CSS: 4 equal columns (1fr 1fr 1fr 1fr). The 4 images = the 4 children. -->
+                <section class="imagegallery">
+                    <img src="images/gamecontroller.jpg" alt="game controller">
+                    <img src="images/gamecontroller.jpg" alt="game controller">
+                    <img src="images/gamecontroller.jpg" alt="game controller">
+                    <img src="images/gamecontroller.jpg" alt="game controller">
+                </section>
+            </section>
+
+            <!-- NOTE: Grid recipe 3. CSS: 2 equal columns → the 2 figures sit side by side. -->
+            <section class="fig">
+
+                <!-- NOTE: figure = self-contained block with an image. figcaption = its caption. One unit together. -->
+                <figure>
+                    <img src="images/gamecontroller.jpg" alt="game controller">
+                    <figcaption>This is an image</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/gamecontroller.jpg" alt="game controller">
+                    <figcaption>This is an image</figcaption>
+                </figure>
+            </section>
+
+            <!-- NOTE: Grid recipe 4. CSS: 1fr 2fr → h3 gets 1/3 of the width, p gets 2/3 ("magazine style"). -->
+            <section class="offset">
+                <h3>This content is offset</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident inventore illum, voluptates optio nihil natus reiciendis, rem, corrupti assumenda totam harum voluptatum voluptatem. Dolorum sunt, repellat veritatis voluptas illo beatae.</p>
+            </section>
+
+            <!-- NOTE: Grid recipe 5. CSS: 2 columns → expects 2 children. -->
+            <section class="grouping">
+
+                <!-- NOTE: div = generic box, NOT semantic. Groups the h3 + p into ONE child (left column). -->
+                <div>
+                    <h3>This is a group</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quod facere architecto enim vel est rerum fugit harum tempora nobis vitae temporibus corrupti veniam adipisci sequi ipsum, dolorem ipsa a?</p>
+                </div>
+
+                <!-- NOTE: The second child (right column). -->
+                <img src="images/gamecontroller.jpg" alt="game controller">
+            </section>
+        </main>
+
+        <!-- NOTE: Semantic tag: bottom of the page. It's EMPTY, so it collapses to a thin line (CSS gives it height: 10px). -->
+        <footer></footer>
+
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women in Tech Quiz</title>
+    <script src="quiz.js" defer></script>
+   
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.24.2/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.24.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.24.2/dist/js/uikit-icons.min.js"></script>
+
+</head>
+<body>
+  <div id="quiz-container">
+        <div id="question"></div>
+        <form id="optionsForm">
+                <label uk-tooltip="Her dad was a famous poet.">
+                    <input type="radio" name="option" value="Ada Lovelace">
+                    Ada Lovelace
+                </label>
+                <label uk-tooltip="She was born in New York City.">
+                    <input type="radio" name="option" value="Grace Hopper">
+                    Grace Hopper
+                </label>
+                <label uk-tooltip="She finished high school at just 14.">
+                    <input type="radio" name="option" value="Katherine Johnson">
+                    Katherine Johnson
+                </label>
+                <label uk-tooltip="She was born in Austria.">
+                    <input type="radio" name="option" value="Hedy Lamarr">
+                    Hedy Lamarr
+                </label>
+                <label uk-tooltip="She was born in Indiana.">
+                    <input type="radio" name="option" value="Margaret Hamilton">
+                    Margaret Hamilton
+                </label>
+                <button type="button" id="submit">Submit</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </body>
+</html>
